@@ -1,0 +1,65 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit( form )">
+  <div class="card" style="width: 18rem;">
+    <h2>Добавить события</h2>
+    <div class="card-body">
+      <p class="card-title">выберите категорию</p>
+      <select class="form-select" aria-label="Default select example"
+              [(ngModel)]="capacityid"
+              [ngModelOptions]="{standalone: true}"
+              (change)="onCategoryChange(capacityid)"
+      >
+        <option *ngFor="let capacitys of capacity" [value]="capacitys.id">
+          {{capacitys.name}}
+        </option>
+      </select>
+    </div>
+
+    <div class="card-body">
+
+      <section class="example-section">
+        <label class="example-margin label-Title">выберите тип</label>
+        <mat-radio-group [(ngModel)]="labelPosition" class="examples">
+          <mat-radio-button class="example-margin"
+                            *ngFor="let checkboxs of checkbox"
+                            [value]="checkboxs?.value"
+                            (click)="activeCheckbox(checkboxs?.value)"
+                            [checked]="checkboxs?.checked" >{{checkboxs?.name}}</mat-radio-button>
+        </mat-radio-group>
+      </section>
+
+    </div>
+
+    <div class="card-body">
+      <p class="card-title">выберите категория</p>
+      <input
+        type="number"
+        class="form-control"
+        placeholder="Username"
+        aria-label="Username"
+        aria-describedby="basic-addon1"
+        formControlName="category"
+        [ngModel]="capacityElement.number"
+      >
+    </div>
+
+    <div class="card-body">
+      <p class="card-title">выводите описания </p>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Username"
+        aria-label="Username"
+        aria-describedby="basic-addon1"
+        formControlName="descriptions"
+        [ngClass]="{'has-error': form.get('descriptions')?.invalid && form.get('descriptions')?.touched}"
+      >
+      <h2 *ngIf="form.get('descriptions')?.invalid && form.get('descriptions')?.touched" ><span class="badge badge-secondary">это поле не может быть пустым</span></h2>
+      <br>
+    </div>
+
+    <div class="card-body">
+      <button [disabled]="form.invalid" class="btn btn-primary" >Go somewhere</button>
+    </div>
+  </div>
+
+</form>

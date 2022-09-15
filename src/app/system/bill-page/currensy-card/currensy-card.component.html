@@ -1,0 +1,15 @@
+<table class="table">
+  <thead>
+    <h2 >курс</h2>
+  <tr>
+    <th scope="col">валюта</th>
+    <th scope="col">курс</th>
+    <th scope="col">дата</th>
+  </tr>
+  <tr *ngFor="let sumData of dataAtty">
+    <td>{{sumData.keys}}</td>
+    <td>{{sumData.value}}</td>
+    <td>{{ sumData.data  | wfmMoment: 'YYYY-MM-DD'}}</td>
+  </tr>
+  </thead>
+</table>

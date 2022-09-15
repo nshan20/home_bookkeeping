@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto,
+  "Helvetica Neue", sans-serif;
+  background: #9eb4d4;
+  //background-image: url('https://rozetked.me/images/uploads/webp/hIzGGa2IfpQr.webp');
+  //background-repeat: no-repeat;
+  //background-attachment: fixed;
+  //background-size: cover;
+}
+.mat-radio-outer-circle {
+  border-color: #4096ff;
+}
+.mat-radio-button.mat-accent .mat-radio-inner-circle, .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple), .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple, .mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+  background-color: #4096ff;
+}
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: #4096ff;
+}
+

@@ -1,0 +1,27 @@
+.example-h2 {
+  margin: 10px;
+}
+.example-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-margin {
+  margin: 0 10px;
+}
+.examples{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20px;
+  height: 60px;
+}
+.mat-radio-inner-circle{
+    background-color: #4093ff;
+}
+.badge-secondary{
+  color: #e24f4f;
+}
+.has-error{
+  border: red solid 2px;
+}

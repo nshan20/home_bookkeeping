@@ -1,0 +1,26 @@
+<div class="table">
+  <div class="title">
+    <h2> расходы </h2>
+    <h2> общая остаток {{totalBalance}}</h2>
+  </div>
+  <div class="frafik" *ngFor="let e of rezult">
+    <div class="progress">
+      <div
+        class="progress-bar progress-bar-striped {{e.colors}}"
+        role="progressbar"
+        [style]="'width:' + e.pratcent + '%'"
+        aria-valuemax="100">
+        {{e.pratcent}}%
+      </div>
+    </div>
+    <div class="text">
+      <span>
+        {{e.amount}}
+        /
+        {{e.sum}}
+        {{e.name}}
+      </span>
+    </div>
+  </div>
+</div>
+

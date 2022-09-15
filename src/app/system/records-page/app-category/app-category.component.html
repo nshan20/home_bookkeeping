@@ -1,0 +1,33 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <div class="card" style="width: 18rem;">
+    <h2>добавить категория</h2>
+    <div class="card-body">
+      <p class="card-title">выберите тип</p>
+      <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+             aria-describedby="basic-addon1"
+             formControlName="userName"
+             [ngClass]="{'has-error': myForm.controls['userName'].invalid && myForm.controls['userName'].touched}"
+      >
+      <span *ngIf="myForm.controls['userName'].invalid && myForm.controls['userName'].touched">
+        anun@ datark e error
+    </span>
+    </div>
+
+    <div class="card-body">
+      <p class="card-title">выберите категория</p>
+      <input type="number" class="form-control" placeholder="Username" aria-label="Username"
+             aria-describedby="basic-addon1"
+             formControlName="capacity"
+             [ngClass]="{'has-error': myForm.controls['capacity'].invalid}"
+      >
+      <span *ngIf="myForm.controls['capacity'].invalid ">
+        gumar@ petk e barcr lini 0 -ic {{myForm.controls['userNumber'].value}}
+      </span>
+    </div>
+
+    <div class="card-body">
+      <button [disabled]="myForm.invalid" type="submit" class="btn btn-primary">Go somewhere</button>
+    </div>
+
+  </div>
+</form>

@@ -1,0 +1,41 @@
+<div class="block-Search">
+  <p class="h2">поиск событий</p>
+
+  <div class="Search">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="{{dropdown}}"
+        aria-label="Recipient's username"
+        aria-describedby="basic-addon2"
+        [(ngModel)]="search"
+        (change)="onSearch(search)"
+      >
+    </div>
+
+    <div class="dropdown" style="float:right;">
+      <button class="dropbtn btn btn-primary">параметры</button>
+      <div class="dropdown-content">
+        <a (click)="changeCriteriy('id')">id</a>
+        <a (click)="changeCriteriy('amount')">amount</a>
+        <a (click)="changeCriteriy('date')">date</a>
+        <a (click)="changeCriteriy('categoryName')">categoryName</a>
+        <a (click)="changeCriteriy('type')">type</a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="alert alert-success" role="alert" *ngFor="let carts of cart | wfmFilter:search:dropdown ">
+  <p>{{carts.id}}</p>
+  <p>{{carts.amount}}</p>
+  <p>{{carts.date | date:'medium'}}</p>
+  <p>{{carts.categoryName}}</p>
+  <p>{{carts.type}}</p>
+  <button type="button" class="btn btn-outline-secondary" routerLink="{{carts.id}}" >open</button>
+</div>
+

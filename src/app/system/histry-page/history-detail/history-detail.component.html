@@ -1,0 +1,30 @@
+
+
+<div class="titleId">
+  <button [routerLink]="['/system/histry']" class="back alert alert-dark" role="alert">
+    <span class="material-symbols-outlined"> arrow_back</span>
+    {{data.id}}</button>
+</div>
+
+
+
+<div *ngIf="!Loading" class="loading">
+  <div    class="spinner-border" role="status">
+    <span class="sr-only"></span>
+  </div>
+</div>
+
+<div *ngIf="Loading" class="card" style="width: 18rem;">
+  <div class="card-body">
+    <div class="title" [class]="onColor(data.type)" role="alert">
+      {{data.type}}
+    </div>
+    <h2 class="card-title">{{data.amount}}</h2>
+    <h2 class="card-title">{{data.categoryName}}</h2>
+    <h2 class="card-title">{{data.description }}</h2>
+    <p class="card-text"></p>
+    <h2 class="card-title">{{data.date}}</h2>
+
+  </div>
+</div>
+

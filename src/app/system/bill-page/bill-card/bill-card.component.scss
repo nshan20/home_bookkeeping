@@ -1,0 +1,22 @@
+.table{
+  width: 500px;
+  background: #f1f1f1;
+  margin-top: 0px;
+}
+.table-tr{
+  width: 100%;
+  border-bottom: #249bca solid 2px;
+  th{
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.58);
+    border-radius: 0px;
+  }
+}
+.material-symbols-outlined{
+  color: #249bca;
+}
+@media only screen and (max-width: 1440px) {
+  .table{
+    width: 350px;
+  }
+}

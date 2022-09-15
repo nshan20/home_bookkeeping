@@ -1,0 +1,42 @@
+<form  [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="card" style="width: 18rem;">
+      <div class="alert alert-{{masage?.type}}" role="alert" *ngIf="masage?.txt">{{masage?.txt}}</div>
+      <h2>редактировать категорию</h2>
+
+      <div class="card-body">
+        <p class="card-title" >выберите тип</p>
+        <select class="form-select" aria-label="Default select example"
+                [(ngModel)]="curentCategoryID"
+                (change)="onCategoryChange()"
+                [ngModelOptions]="{standalone: true}"
+        >
+          <option  *ngFor="let capacis of capacity"
+                  [value]="capacis.id"
+          >{{capacis.name}}</option>
+        </select>
+        <br>
+
+        <p class="card-title">выберите тип</p>
+        <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+               aria-describedby="basic-addon1"
+               [ngModel]="curentCategory?.name"
+               formControlName="name"
+               [ngClass]="{'has-error': form.get('name')?.invalid}"
+        >
+        <h2 *ngIf="form.get('name')?.invalid " ><span class="badge badge-secondary">это поле не может быть пустым</span></h2>
+        <br>
+
+        <p class="card-title">выберите категория</p>
+        <input type="number" class="form-control" placeholder="Username" aria-label="Username"
+               aria-describedby="basic-addon1"
+               [ngModel]="curentCategory?.number"
+               formControlName="number"
+               [ngClass]="{'has-error': form.get('number')?.invalid}"
+        >
+        <h2 *ngIf="form.get('number')?.invalid " ><span class="badge badge-secondary">это поле не может быть пустым</span></h2>
+        <br>
+        <button [disabled]="form.invalid"  type="submit" class="btn btn-primary">редактировать</button>
+      </div>
+
+    </div>
+  </form>

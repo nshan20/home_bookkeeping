@@ -1,0 +1,10 @@
+<div class="big-div tex-center" *ngIf="!isLoding"> <p>Loding...</p> </div>
+
+<div class="big-div" *ngIf="isLoding">
+  <app-app-event [capacity]="capacity" ></app-app-event>
+
+  <app-app-category (onCapacityEvent)="newCapacityEvent($event)" ></app-app-category>
+
+  <app-edit-category [capacity]="capacity" (onCapacityEvent)="editData($event)" ></app-edit-category>
+</div>
+

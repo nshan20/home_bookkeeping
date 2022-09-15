@@ -1,0 +1,20 @@
+
+<div class="header">
+  <h2>stranica schyota</h2>
+  <span class="material-symbols-outlined" (click)="onRefresh()" >autorenew</span>
+</div>
+
+
+<div class="big-blog">
+
+  <div class="currency">
+    <p *ngIf="!isLoadet">...loding</p>
+    <app-bill-card  *ngIf="isLoadet" [bill]="bill" [currensy]="currensy"></app-bill-card>
+  </div>
+
+  <div class="currency">
+    <p *ngIf="!isLoadet">...app-currensy-card</p>
+    <app-currensy-card *ngIf="isLoadet" [bill]="bill" [currensy]="currensy" ></app-currensy-card>
+  </div>
+
+</div>

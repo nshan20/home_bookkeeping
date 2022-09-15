@@ -1,0 +1,21 @@
+<div class="alert alert-primary" role="alert">
+
+  <div class="data">
+    {{data | date:'dd.mm.yyyy'}}
+  </div>
+
+  <div class="user">
+
+    <div class="dropdown">
+      <button class="dropbtn"> Здравствуй {{user.name}}</button>
+      <div class="dropdown-content">
+        <a [routerLink]="['/system','records']">Records</a>
+        <a (click)="Onlogaut()" >
+          <span class="material-symbols-outlined">power_settings_new</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</div>

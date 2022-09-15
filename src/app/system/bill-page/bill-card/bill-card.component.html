@@ -1,0 +1,10 @@
+<table class="table">
+  <h2>счёт</h2>
+  <tr class="table-tr" *ngFor="let Array of manyArray" >
+    <th  >
+        <span class="material-symbols-outlined" >
+          {{iconTitle(Array.name)}}
+        </span>
+      : {{Array.sum | number : '1.2'}}</th>
+    </tr>
+  </table>

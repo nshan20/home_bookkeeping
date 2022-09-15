@@ -1,0 +1,17 @@
+.table{
+  width: 600px;
+  background: #f1f1f1;
+  th{
+    font-size: 20px;
+  }
+  td{
+    font-size: 28px;
+    color: rgba(71, 73, 73, 0.7);
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .table{
+    width: 300px;
+  }
+}

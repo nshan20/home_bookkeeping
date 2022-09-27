@@ -24,7 +24,6 @@ export class CurrensyCardComponent implements OnInit {
       // @ts-ignore
       dataAtty.push({keys: key[i], value: currensy[key[i]] , data: new Date()});
     }
-    console.log(dataAtty);
   }
 
 

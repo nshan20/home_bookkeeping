@@ -16,7 +16,7 @@ const routes:Routes=[
       {path:"planning", component: PlanningPageComponent},
       {path:"records", component: RecordsPageComponent},
       {path:"histry/:id", component: HistoryDetailComponent},
-    ]}
+    ]},
 ]
 
 @NgModule({

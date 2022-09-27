@@ -1,1 +1,46 @@
-<p>history-filther works!</p>
+<div id="myModal" class="modal" >
+    <div class="modal-content ex3">
+        <div class="title">
+          <h2>Какой-то текст в модальном..</h2>
+          <span class="material-symbols-outlined"  (click)="clos()">close</span>
+        </div>
+
+
+        <select class="dropdown" name="cars" id="cars" [(ngModel)]="selectedPereud" >
+          <option *ngFor="let p of timePiriuds" [value]="p.type"  >{{p.label}}</option>
+        </select>
+
+      <div class="checkbox">
+        <p class="h2">h2. Bootstrap heading</p>
+        <div class="form-check" *ngFor="let t of typs" >
+          <input class="form-check-input" type="checkbox" id="{{t.id}}"
+                [value]="t.type"
+                (change)="hendelChangeType($event.target)"
+          >
+          <label class="form-check-label" for="{{t.id}}">
+            {{t.type}}
+          </label>
+        </div>
+      </div>
+
+      <div class="checkbox">
+        <p class="h2">categories</p>
+        <div class="form-check" *ngFor="let t of categories" >
+          <input class="form-check-input" type="checkbox" id="{{t.name}}"
+                 [value]="t.id"
+                 (change)="hendelChangeCategories($event.target)"
+          >
+          <label class="form-check-label" for="{{t.name}}">
+            {{t.name}}
+          </label>
+        </div>
+      </div>
+
+      <div class="button">
+        <button type="button" class="btn btn-primary" (click)="clos()" >отмена</button>
+        <button type="button" class="btn btn-primary" (click)="applayFilter()">подтвердить</button>
+      </div>
+
+
+    </div>
+</div>

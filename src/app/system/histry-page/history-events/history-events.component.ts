@@ -16,7 +16,6 @@ export class HistoryEventsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.cart, "cccc");
   }
 
 

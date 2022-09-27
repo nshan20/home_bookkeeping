@@ -90,7 +90,6 @@ export class PlanningPageComponent implements OnInit {
     }
 
     this.rezult?.push(...events);
-    console.log(this.rezult, "rezult");
 
     if ( this.totalBalance === 0){
       this.categoryServer();

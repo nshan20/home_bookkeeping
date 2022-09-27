@@ -25,6 +25,11 @@ export class LoginComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    // @ts-ignore
+    if (JSON.parse(localStorage.getItem('user'))){
+      this.router.navigate(['/system', 'bill']);
+    }
+
     this.message = new MessageModule("danger", "");
 
     this.rout.queryParams.subscribe((params:any)=>{

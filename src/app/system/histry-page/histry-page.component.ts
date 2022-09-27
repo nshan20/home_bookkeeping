@@ -8,6 +8,9 @@ import { Subscription} from "rxjs";
   styleUrls: ['./histry-page.component.scss']
 })
 export class HistryPageComponent implements OnInit, OnDestroy {
+
+  categories:any;
+
   graphic:any[] = [];
   cart:any[] = [];
   isLoaded = false;
@@ -16,11 +19,14 @@ export class HistryPageComponent implements OnInit, OnDestroy {
   syb?:Subscription;
   syb2?:Subscription;
 
+  isFilterVituble:boolean = false;
+
   constructor(private categoryiesServis:CategoryiesServis) { }
 
   ngOnInit(): void {
     this.syb = this.categoryiesServis.getCategory()
       .subscribe((data:any)=>{
+        this.categories = data;
         for (let i =0; i < data.length; i++){
           this.graphic.push({name: data[i].name, value: data[i].number});
         }
@@ -37,6 +43,23 @@ export class HistryPageComponent implements OnInit, OnDestroy {
 
   }
 
+  private toogleIsFilterVituble(dir:boolean){
+    this.isFilterVituble = dir;
+  }
+
+  openFilter(){
+    this.toogleIsFilterVituble(true);
+  }
+
+  isFilterClose(){
+    this.toogleIsFilterVituble(false);
+  }
+
+  onFilterApply(filterData:any){
+    this.toogleIsFilterVituble(false);
+    console.log(filterData);
+  }
+
   ngOnDestroy() {
       if (this.syb){
         this.syb.unsubscribe();
@@ -45,6 +68,4 @@ export class HistryPageComponent implements OnInit, OnDestroy {
       this.syb2.unsubscribe();
       }
   }
-
-
 }

@@ -19,6 +19,11 @@ export class RegistrationComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // @ts-ignore
+    if (JSON.parse(localStorage.getItem('user'))){
+      this.router.navigate(['/system', 'bill']);
+    }
+
     this.form = new FormGroup({
       // @ts-ignore
       email: new FormControl(null, [Validators.required, Validators.email], this.farbitonEmails.bind(this)),

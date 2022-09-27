@@ -11,3 +11,26 @@
   display: flex;
   justify-content: center;
 }
+
+.big{
+  width: 100%;
+  display: flex;
+  padding-bottom: 15px;
+  border-bottom: 1px #000 solid;
+  h2{
+    font-size: 30px;
+    height: 35px;
+  }
+}
+.material-symbols-outlined{
+  cursor: pointer;
+  margin-left: auto;
+  font-size: 40px;
+  color: #3e8e41;
+  border: #3e8e41 solid 1px;
+  height: 40px;
+  width: 40px;
+}
+.material-symbols-outlined:hover{
+  background: rgba(62, 142, 65, 0.2);
+}

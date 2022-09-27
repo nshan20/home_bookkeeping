@@ -8,8 +8,19 @@
 
 
 <div class="container" *ngIf="isLoaded && isEvent">
+  <div class="big">
+    <h2>страница истории</h2>
+    <span class="material-symbols-outlined" (click)="openFilter()" >filter_alt</span>
+  </div>
+  <div class="" *ngIf="isFilterVituble">
+      <app-history-filther
+        (isFilterClose)="isFilterClose()"
+        (onFilterApply)="onFilterApply($event)"
+        [categories]="categories"
+      ></app-history-filther>
+  </div>
+
   <app-history-chart  [graphic]="graphic"></app-history-chart>
   <app-history-events [cart]="cart" ></app-history-events>
-  <app-history-filther></app-history-filther>
 </div>
 
